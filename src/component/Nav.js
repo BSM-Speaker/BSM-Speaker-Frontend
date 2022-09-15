@@ -1,36 +1,42 @@
 import styled from "styled-components";
-
+import { Link } from "react-router-dom";
 const StyledNav = styled.nav`
-    position: absolute;
     width: 100%;
-    height: 40px;
-    top: 80.66px;
-    background: rgba(209, 209, 209, 0.14);
+    height: 60px;
+    background-color: #D4F4FF;
 `
 const StyledLi = styled.li`
-    margin-top: 7px;
     list-style-type: none;
-    font-family: 'Inter'
-    font-style: normal;
-    font-weight: 1000;
-    font-size: 15px;
-    line-height: 30px;
 `
 const StyledUl = styled.ul`
-    position: absolute; 
-    left: 10px;
+    height: 100%;
     display: flex;
-    gap: 10px;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+`
+const StyledLink = styled(Link)`
+    text-decoration: none;
+    color: black;
+    padding: 8px;
+    font-size: 25px;
+    &:hover{
+        border-radius: 100px;
+        background-color: #7494B3;
+        color: #D4F4FF;
+    }
 `
 function Nav() {
     return (
         <StyledNav>
             <StyledUl>
                 <StyledLi>
-                    그룹가입
+                    <StyledLink to="/InviteCode">
+                    그룹가입</StyledLink>
                 </StyledLi>
                 <StyledLi>
-                    그룹생성
+                    <StyledLink to="/MakeGroup">
+                        그룹생성</StyledLink>
                 </StyledLi>
             </StyledUl>
         </StyledNav>

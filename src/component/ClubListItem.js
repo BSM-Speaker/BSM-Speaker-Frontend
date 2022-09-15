@@ -1,15 +1,20 @@
 import styled from "styled-components"
 
 const StyledClubListItem = styled.div `
-    width: 50px;
-    height: 50px;
-    left: 37.85px;
-    top: 182.13px;
-    background: #BA2828;
+    width: 100%;
+    height: 71%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 `
 const StyledLi = styled.li`
-    text-align: center;
+    width: 60px;
+    height: 60px;
     margin-top: 30px;
+    display: flex;
+    align-items: center;
+    background-color: greenyellow;
+    border-radius: 50%;
 `
 function ClubListItem(props) {
     return(

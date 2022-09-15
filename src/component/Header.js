@@ -1,13 +1,16 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 const StyledHeader = styled.header `
-    position: absolute;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     height: 80.66px;
-    background: #D9D9D9;
+    background: #7494B3;
 `
 const Logo = styled.div `
+    margin-left: 20px;
     box-sizing: border-box;
-    position: absolute;
     width: 60px;
     height: 28px;
     left: 30.28px;
@@ -17,27 +20,24 @@ const Logo = styled.div `
     background-repeat: no-repeat;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 `
-const Btn_login = styled.div`
-    position: absolute;
-    width: 45.3px;
-    height: 22.38px;
-    right: 20px;
-    top: 30.85px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 39px;
-    display: flex;
-    align-items: center;
-    letter-spacing: -0.017em;
-    color: #000000;
+const StyledLogin = styled.a`
+    margin-right: 20px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    padding: 8px;
+    &:hover{
+        border-radius: 100px;
+        background-color: #D4F4FF;
+        color: #7494B3;
+    }
 `
 function Header() {
     return (
         <StyledHeader>
-            <Logo/>
-            <Btn_login>로그인</Btn_login>
+            <Link to={"/"}><Logo/></Link>
+            <StyledLogin
+                href="https://auth.bssm.kro.kr/oauth?clientId=66f68ad9&redirectURI=http://localhost:3000/oauth">로그인</StyledLogin>
         </StyledHeader>
     )
 }

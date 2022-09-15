@@ -11,12 +11,9 @@ const clublist = [
     },
 ]
 const StyledClubList = styled.div`
-    position: absolute;
     width: 100px;
-    height: calc(100% - 130.65px);
-    left: 0px;
-    top: 121.01px;
-    background: #D9D9D9;
+    height: 100%;
+    background: #7486AE;
     overflow: auto;
     &::-webkit-scrollbar {
         display: none;
