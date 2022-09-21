@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 const StyledHeader = styled.header `
@@ -32,12 +33,23 @@ const StyledLogin = styled.a`
         color: #7494B3;
     }
 `
+
+const UserMenu = styled.div`
+    margin-right: 20px;
+`
 function Header() {
+    const [a,b] = useState(localStorage.getItem('user'))
     return (
         <StyledHeader>
             <Link to={"/"}><Logo/></Link>
-            <StyledLogin
-                href="https://auth.bssm.kro.kr/oauth?clientId=66f68ad9&redirectURI=http://localhost:3000/oauth">로그인</StyledLogin>
+            {a == null ? <StyledLogin
+                href="https://auth.bssm.kro.kr/oauth?clientId=66f68ad9&redirectURI=http://localhost:3000/oauth"
+                >로그인</StyledLogin> : <UserMenu onClick={()=>{
+                    localStorage.removeItem('user');
+                    b(null);
+                }}>
+                    로그아웃    
+                </UserMenu>}
         </StyledHeader>
     )
 }
