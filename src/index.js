@@ -10,9 +10,16 @@ import {
 } from "react-router-dom";
 import InviteCode from './pages/InviteCode';
 import MakeGroup from './pages/MakeGroup'
-import Oauth from './pages/ouath';
+import Oauth from './pages/ouath';import {
+  RecoilRoot,
+  atom,
+  selector,
+  userRecoilState,
+  useRecoilValue,
+} from "recoil"
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <RecoilRoot>
   <BrowserRouter>
     <Routes>
       <Route path="/oauth" element={<Oauth/>}></Route>
@@ -23,6 +30,7 @@ root.render(
       </Route>
     </Routes>
   </BrowserRouter>
+  </RecoilRoot>
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -1,15 +1,9 @@
+import axios from "axios";
+import { useState } from "react";
+import { useRecoilBridgeAcrossReactRoots_UNSTABLE, useRecoilState } from "recoil";
 import styled from "styled-components";
+import { loginState } from "../state";
 import ClubListItem from "./ClubListItem";
-const clublist = [
-    {
-        id: 1,
-        name: "club1",
-    },
-    {
-        id: 2,
-        name: "club2",
-    },
-]
 const StyledClubList = styled.div`
     width: 100px;
     height: 100%;
@@ -28,15 +22,32 @@ const StyledUl = styled.ul `
     
 `
 function Clublist() {
+    const [clublist, setClublist] = useState([]);
+    const [login, localStorage] = useRecoilState(loginState);
+    if(login != null) {
+        const resData = [];
+        axios.get('/api/group')
+        .then((res)=>{
+            res.data.map((data)=>{
+                resData.push(data)
+            })
+            setClublist(resData);
+        })
+    }
     return (
         <StyledClubList>
-            <StyledUl>
-                    {
-                        clublist.map((club,_)=>{
-                            return <ClubListItem name={club.name} id={club.id}/>
-                        })
-                    } 
-            </StyledUl>
+            {login == null ? 
+                 '로그인을 해주세요'
+                 :
+                <StyledUl>
+                {
+                    clublist.map((club,_)=>{
+                        return <ClubListItem name={club.name} id={club.id}/>
+                    })
+                } 
+                </StyledUl>
+            }
+            
         </StyledClubList>
     )
 }
