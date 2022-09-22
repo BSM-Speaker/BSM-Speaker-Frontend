@@ -17,6 +17,7 @@ import Oauth from './pages/ouath';import {
   userRecoilState,
   useRecoilValue,
 } from "recoil"
+import { Detail } from './pages/detail';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <RecoilRoot>
@@ -25,8 +26,8 @@ root.render(
       <Route path="/oauth" element={<Oauth/>}></Route>
       <Route path="/" element={<App />}>
         <Route path="/InviteCode" element={<InviteCode/>}/>
-        <Route path="/MakeGroup"
-        element={<MakeGroup/>}/>
+        <Route path="/MakeGroup" element={<MakeGroup/>}/>
+        <Route path="/detail/:id" element={<Detail/>}/>
       </Route>
     </Routes>
   </BrowserRouter>

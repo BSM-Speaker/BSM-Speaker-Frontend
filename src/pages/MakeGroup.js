@@ -15,6 +15,7 @@ const StyledSection = styled.section`
 const InputBox = styled.input`
     width: 80%;
     height: 10%;
+    font-size: 23px;
 `
 const StyledForm = styled.form`
     display: flex;

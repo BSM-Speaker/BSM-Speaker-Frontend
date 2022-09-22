@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom"
 import styled from "styled-components"
 
 const StyledClubListItem = styled.div `
@@ -17,8 +18,11 @@ const StyledLi = styled.li`
     border-radius: 50%;
 `
 function ClubListItem(props) {
+    const navigate = useNavigate();
     return(
-        <StyledLi>
+        <StyledLi onClick={()=>{
+            navigate(`/detail/${props.id}`)
+        }}>
             <StyledClubListItem>
                 {props.name}
             </StyledClubListItem>

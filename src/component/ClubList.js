@@ -36,7 +36,7 @@ function Clublist() {
                 setClublist(resData);
             })
         }
-    }, [mg])
+    }, [mg, login])
     
     return (
         <StyledClubList>
@@ -45,8 +45,8 @@ function Clublist() {
                  :
                 <StyledUl>
                 {
-                    clublist.map((club,_)=>{
-                        return <ClubListItem name={club.name} id={club.id}/>
+                    clublist.map((club,idx)=>{
+                        return <ClubListItem name={club.name} id={club.id} key={idx}/>
                     })
                 } 
                 </StyledUl>
