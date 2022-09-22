@@ -22,6 +22,7 @@ const Submit = styled.div`
     border-radius: 100px;
     text-align: center;
     border: solid black 4px;
+    cursor: pointer;
 `
 function InviteCode() {
     const [code, setCode] = useState("");
@@ -35,7 +36,7 @@ function InviteCode() {
                     "groupId": code
                 })
                 .then(()=>{
-                    alert('가입이 완료되었습니다.')
+                    alert('가입이 완료되었습니다. ')
                 })
                 .catch((err)=>{
                     alert('잘못된코드입니다.')

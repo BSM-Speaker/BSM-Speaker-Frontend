@@ -1,8 +1,8 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRecoilBridgeAcrossReactRoots_UNSTABLE, useRecoilState } from "recoil";
 import styled from "styled-components";
-import { loginState } from "../state";
+import { loginState, mgState } from "../state";
 import ClubListItem from "./ClubListItem";
 const StyledClubList = styled.div`
     width: 100px;
@@ -24,16 +24,20 @@ const StyledUl = styled.ul `
 function Clublist() {
     const [clublist, setClublist] = useState([]);
     const [login, localStorage] = useRecoilState(loginState);
-    if(login != null) {
-        const resData = [];
-        axios.get('/api/group')
-        .then((res)=>{
-            res.data.map((data)=>{
-                resData.push(data)
+    const [mg, setmg] = useRecoilState(mgState);
+    useEffect(()=>{
+        if(login != null) {
+            const resData = [];
+            axios.get('/api/group')
+            .then((res)=>{
+                res.data.map((data)=>{
+                    resData.push(data)
+                })
+                setClublist(resData);
             })
-            setClublist(resData);
-        })
-    }
+        }
+    }, [mg])
+    
     return (
         <StyledClubList>
             {login == null ? 

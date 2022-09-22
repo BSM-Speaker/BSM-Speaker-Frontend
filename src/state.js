@@ -10,3 +10,7 @@ export const loginState = atom({
     key: 'login',
     default: JSON.parse(localStorage.getItem('user'))
 })
+export const mgState = atom({
+    key: 'mg',
+    default: true
+})

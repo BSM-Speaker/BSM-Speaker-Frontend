@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
+import { useRecoilState } from "recoil";
 import styled, { StyledComponent } from "styled-components";
-
+import {mgState} from '../state'
 const StyledSection = styled.section`
     display: flex;
     flex-direction: column;
@@ -29,10 +30,12 @@ const Submit = styled.div`
     border-radius: 100px;
     text-align: center;
     border: solid black 4px;
+    cursor: pointer;
 `
 function MakeGroup() {
     const [name, setName] = useState("");
     const [des, setDes] = useState("");
+    const [mg, setmg] = useRecoilState(mgState)
     return (
         <StyledSection>
             <h2>그룹생성</h2>
@@ -47,6 +50,7 @@ function MakeGroup() {
                     "name": name,
                     "description": des
                 })
+                .then(()=>{setmg(!mg)})
                 .catch(err=>{alert("그룹이름이 중복되었거나 올바르지 않습니다.")})
             }}>생성!</Submit>
         </StyledSection>
