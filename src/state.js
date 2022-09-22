@@ -8,5 +8,5 @@ import {
 } from "recoil"
 export const loginState = atom({
     key: 'login',
-    default: null,
+    default: JSON.parse(localStorage.getItem('user'))
 })
