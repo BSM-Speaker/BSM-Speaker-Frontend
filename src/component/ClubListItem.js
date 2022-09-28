@@ -14,7 +14,7 @@ const StyledLi = styled.li`
     margin-top: 30px;
     display: flex;
     align-items: center;
-    background-color: greenyellow;
+    background-color: beige;
     border-radius: 50%;
 `
 function ClubListItem(props) {

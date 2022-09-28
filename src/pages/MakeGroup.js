@@ -3,14 +3,15 @@ import { useState } from "react";
 import { useRecoilState } from "recoil";
 import styled, { StyledComponent } from "styled-components";
 import {mgState} from '../state'
-const StyledSection = styled.section`
+const Contain = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 90px 0px;
+    justify-content: space-around;
     width: calc(100% - 100px);
-    height: calc(100% - 80px);
+    height: 100%;
     font-size: 2rem;
-    margin-top: 80px;
 `
 const InputBox = styled.input`
     width: 80%;
@@ -38,12 +39,12 @@ function MakeGroup() {
     const [des, setDes] = useState("");
     const [mg, setmg] = useRecoilState(mgState)
     return (
-        <StyledSection>
-            <h2>그룹생성</h2>
+        <Contain>
+            <div style={{"font-size":"70px"}}>그룹생성</div>
             그룹이름
             <InputBox type="text" onChange={(e)=>{setName(e.target.value)}}></InputBox>
             <br/>
-            설명
+            한줄 설명
             <InputBox type="text" onChange={(e)=>{setDes(e.target.value)}}></InputBox>
             <Submit onClick={()=>{
                 axios.post('/api/group',
@@ -54,7 +55,7 @@ function MakeGroup() {
                 .then(()=>{setmg(!mg)})
                 .catch(err=>{alert("그룹이름이 중복되었거나 올바르지 않습니다.")})
             }}>생성!</Submit>
-        </StyledSection>
+        </Contain>
     )
 }
 

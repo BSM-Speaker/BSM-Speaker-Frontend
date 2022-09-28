@@ -20,7 +20,7 @@ const Logo = styled.div `
     height: 28px;
     left: 30.28px;
     top: 27px;
-    background: url(./image/logo.png);
+    background: url(/image/logo.png);
     background-size: contain;
     background-repeat: no-repeat;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -41,7 +41,7 @@ const User = styled.div`
     width: 40px;
     height: 40px;
     margin-right: 20px;
-    background: url(./image/loginicon.png);
+    background: url(/image/loginicon.png);
     background-size: contain;
     background-repeat: no-repeat;
 `

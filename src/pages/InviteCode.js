@@ -2,14 +2,15 @@ import { useState } from "react";
 import styled, { StyledComponent } from "styled-components";
 import axios from "axios";
 import { useRecoilState } from "recoil";
-const StyledSection = styled.section`
+const Contain = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 90px 0px;
+    justify-content: space-around;
     width: calc(100% - 100px);
-    height: calc(100% - 80px);
+    height: 100%;
     font-size: 2rem;
-    margin-top: 80px;
 `
 const InputBox = styled.input`
     width: 80%;
@@ -17,7 +18,6 @@ const InputBox = styled.input`
     font-size: 100px;
 `
 const Submit = styled.div`
-    margin-top: 20px;
     width: 50%;
     height: 50px;
     border-radius: 100px;
@@ -28,8 +28,8 @@ const Submit = styled.div`
 function InviteCode() {
     const [code, setCode] = useState("");
     return (
-        <StyledSection>
-            <h2>초대코드 입력</h2>
+        <Contain>
+            <div style={{"font-size":"70px"}}>초대코드 입력</div>
             <InputBox type="text" onChange={(e)=>{setCode(e.target.value)}}></InputBox>
             <br/>
             <Submit onClick={()=>{
@@ -43,7 +43,7 @@ function InviteCode() {
                     alert('잘못된코드입니다.')
                 })
             }}>전송</Submit>
-        </StyledSection>
+        </Contain>
     )
 }
 
