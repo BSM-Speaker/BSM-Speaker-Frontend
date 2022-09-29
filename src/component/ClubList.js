@@ -6,7 +6,7 @@ import { loginState, mgState } from "../state";
 import ClubListItem from "./ClubListItem";
 const StyledClubList = styled.div`
     width: 100px;
-    background: #7486AE;
+    background: grey;
     overflow: auto;
     &::-webkit-scrollbar {
         display: none;

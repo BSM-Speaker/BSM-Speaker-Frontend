@@ -11,12 +11,13 @@ function logout(setLogin) {
 }
 const Contain = styled.div`
     position: absolute;
-    width:300px;
-    height:200px;
+    width:200px;
+    height:150px;
     top: 3px;
     right: 3px;
-    border: 3px solid black;
-    background-color: skyblue;
+    font-size: 20px;
+    border: 2px solid black;
+    background-color: #FAF9F6;
     border-radius: 20px;
 `
 const User_info = styled.div`
@@ -30,15 +31,21 @@ const Btn_logout = styled.div`
     text-align: center;
     width: 90px;
     height: 20px;
+    margin: 10px;
+    font-size: 15px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
     background-color: white;
     border: solid 2px black;
+    cursor: pointer;
 `
 export function Modal(props) {
     const [login, setLogin] = useRecoilState(loginState)
     return (
         <Contain onClick={()=>{props.setModal(false)}}>
             <User_info>
-                nickname : {login.nickname}
+                user : {login.nickname}
             </User_info>
             <Btn_logout onClick={()=>{logout(setLogin)}}>logout</Btn_logout>
         </Contain>

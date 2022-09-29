@@ -7,6 +7,7 @@ const StyledClubListItem = styled.div `
     display: flex;
     justify-content: space-around;
     align-items: center;
+    cursor: pointer;
 `
 const StyledLi = styled.li`
     width: 60px;
@@ -16,6 +17,9 @@ const StyledLi = styled.li`
     align-items: center;
     background-color: beige;
     border-radius: 50%;
+    &:hover {
+        box-shadow: 0px 0px 0px 5px white;
+    }
 `
 function ClubListItem(props) {
     const navigate = useNavigate();

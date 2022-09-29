@@ -5,11 +5,13 @@ import styled from "styled-components";
 import PostListItem from "../component/PostListItem";
 const Btn_write = styled.button`
     border: 0px;
-    background-color: skyblue;
+    background-color: grey;
     font-size: 20px;
     width: 150px;
     height: 50px;
     border-radius: 10px;
+    color: black;
+    cursor: pointer;
 `
 const Contain = styled.div`
     padding: 10px;
@@ -28,6 +30,13 @@ const Post = styled.div`
     &::-webkit-scrollbar {
         display: none;
     }
+    margin-top: 20px;
+    border: solid grey 3px;
+    border-radius: 20px;
+`
+const Empty = styled.div`
+    text-align:center;
+    font-size: 100px;
 `
 export function Detail() {
     const [post, setPost] = useState([])
@@ -37,7 +46,7 @@ export function Detail() {
     const { id } = useParams();
     useEffect(()=>{
         const resData = []
-        axios.get(`/api/post/${id}`)
+        axios.get(`/api/post?groupId=${id}&limit=10`)
         .then((res)=>{
             res.data.map((data, idx)=>{
                 resData.push(data)
@@ -65,7 +74,7 @@ export function Detail() {
         <input onChange={(e)=>{setDes(e.target.value)}}></input>
         <Post>
             {
-            post.map((data)=>{
+            !post.length ? <Empty>글을 써주세요~!</Empty>: post.map((data)=>{
                 return <PostListItem data={data}/>
             })
             }

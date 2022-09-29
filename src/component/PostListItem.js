@@ -8,6 +8,9 @@ const Contain = styled.div`
     border-radius: 20px;
     background-color: beige;
     border: 2px solid grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `
 function PostListItem(props) {
     return (

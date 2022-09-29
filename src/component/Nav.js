@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const StyledNav = styled.nav`
     width: 100%;
     height: 45px;
-    background-color: #D4F4FF;
+    border-bottom: 3px solid black;
 `
 const StyledLi = styled.li`
     list-style-type: none;
@@ -13,17 +13,17 @@ const StyledUl = styled.ul`
     display: flex;
     align-items: center;
     justify-content: space-around;
-    gap: 30px;
 `
 const StyledLink = styled(Link)`
     text-decoration: none;
     color: black;
-    padding: 8px;
+    padding: 5px;
     font-size: 25px;
+    border: 2px solid white;
     &:hover{
         border-radius: 100px;
-        background-color: #7494B3;
-        color: #D4F4FF;
+        border: 2px solid grey;
+        color: grey;
     }
 `
 function Nav() {

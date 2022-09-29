@@ -13,10 +13,11 @@ const Contain = styled.div`
     height: 100%;
     font-size: 2rem;
 `
-const InputBox = styled.input`
+const InputBox = styled.textarea`
     width: 80%;
-    height: 10%;
+    height: 30%;
     font-size: 23px;
+    resize: none;
 `
 const StyledForm = styled.form`
     display: flex;
@@ -41,11 +42,9 @@ function MakeGroup() {
     return (
         <Contain>
             <div style={{"font-size":"70px"}}>그룹생성</div>
-            그룹이름
-            <InputBox type="text" onChange={(e)=>{setName(e.target.value)}}></InputBox>
+            <InputBox type="text" onChange={(e)=>{setName(e.target.value)}} placeholder="그룹 이름을 입력해주세요" style={{"height":"10%"}}></InputBox>
             <br/>
-            한줄 설명
-            <InputBox type="text" onChange={(e)=>{setDes(e.target.value)}}></InputBox>
+            <InputBox type="text" onChange={(e)=>{setDes(e.target.value)}} placeholder="그룹 설명을 입력해주세요" style={{"fontSize":"15px"}}></InputBox>
             <Submit onClick={()=>{
                 axios.post('/api/group',
                 {
