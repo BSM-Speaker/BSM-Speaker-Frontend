@@ -19,10 +19,8 @@ const StyledLink = styled(Link)`
     color: black;
     padding: 5px;
     font-size: 25px;
-    border: 2px solid white;
     &:hover{
         border-radius: 100px;
-        border: 2px solid grey;
         color: grey;
     }
 `

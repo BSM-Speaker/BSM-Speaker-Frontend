@@ -13,23 +13,35 @@ const Contain = styled.div`
     font-size: 2rem;
 `
 const InputBox = styled.input`
-    width: 80%;
+    width: 70%;
     height: 100px;
-    font-size: 100px;
+    border-radius: 30px;
+    border: solid black 1px;
+    font-size: 90px;
 `
 const Submit = styled.div`
-    width: 50%;
-    height: 50px;
-    border-radius: 100px;
-    text-align: center;
-    border: solid black 4px;
+    width: 20%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    border: solid black 2px;
+    line-height: 50px;
     cursor: pointer;
+`
+const Form = styled.div`
+    margin: 20px;
+    display: inline-flex;
+    justify-content: center;
+    border: solid black 2px;
 `
 function InviteCode() {
     const [code, setCode] = useState("");
     return (
         <Contain>
-            <div style={{"font-size":"70px"}}>초대코드 입력</div>
+            <div style={{"font-size":"60px"}}>초대코드 입력</div>
+            <Form>
             <InputBox type="text" onChange={(e)=>{setCode(e.target.value)}}></InputBox>
             <br/>
             <Submit onClick={()=>{
@@ -43,6 +55,7 @@ function InviteCode() {
                     alert('잘못된코드입니다.')
                 })
             }}>전송</Submit>
+            </Form>
         </Contain>
     )
 }

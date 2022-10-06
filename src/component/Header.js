@@ -33,7 +33,6 @@ const StyledLogin = styled.a`
     padding: 8px;
     &:hover{
         border-radius: 100px;
-        background-color: #D4F4FF;
         color: #7494B3;
     }
 `

@@ -17,14 +17,9 @@ const InputBox = styled.textarea`
     width: 80%;
     height: 30%;
     font-size: 23px;
+    border-radius: 20px;
+    padding: 5px;
     resize: none;
-`
-const StyledForm = styled.form`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 70%;
-    height: 70%;
 `
 const Submit = styled.div`
     margin-top: 20px;
@@ -32,7 +27,8 @@ const Submit = styled.div`
     height: 50px;
     border-radius: 100px;
     text-align: center;
-    border: solid black 4px;
+    line-height: 50px;
+    border: solid black 2px;
     cursor: pointer;
 `
 function MakeGroup() {
@@ -41,7 +37,7 @@ function MakeGroup() {
     const [mg, setmg] = useRecoilState(mgState)
     return (
         <Contain>
-            <div style={{"font-size":"70px"}}>그룹생성</div>
+            <div style={{"font-size":"60px"}}>그룹생성</div>
             <InputBox type="text" onChange={(e)=>{setName(e.target.value)}} placeholder="그룹 이름을 입력해주세요" style={{"height":"10%"}}></InputBox>
             <br/>
             <InputBox type="text" onChange={(e)=>{setDes(e.target.value)}} placeholder="그룹 설명을 입력해주세요" style={{"fontSize":"15px"}}></InputBox>
