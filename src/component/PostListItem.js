@@ -1,6 +1,9 @@
+import { useState } from "react";
+import { useRecoilState } from "recoil";
 import styled from "styled-components";
 
 const Contain = styled.div`
+    cursor: pointer;
     height: 50px;
     margin: 20px;
     font-size: 40px;
@@ -13,9 +16,12 @@ const Contain = styled.div`
     justify-content: center;
 `
 function PostListItem(props) {
+    const [des, setDes] = useState(false);
+    console.log(props.data)
+    const content = <><div style={{color:"blue"}}>{props.data.user.nickname}</div> : {props.data.content}</>;
     return (
-    <Contain>
-        {props.data.title}
+    <Contain onClick={()=>{setDes(!des)}}>
+        {des ? content : props.data.title}
     </Contain>
     )
 }
