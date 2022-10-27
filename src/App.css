@@ -15,4 +15,5 @@
   width: 100%;
   height: calc(100% - 125.66px);
   display: flex;
+  background-color: #e0ffff;
 }
