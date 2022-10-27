@@ -14,6 +14,11 @@ const Background = styled.div`
   background-color: rgba(255, 255, 255, 0.8);
 `;
 const Contain = styled.div`
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   left: 10%;
   width: 80%;
   height: 500px;
@@ -28,7 +33,6 @@ const Header = styled.div`
   font-size: 40px;
 `;
 const Btn_Write = styled.div`
-  left: 50%;
   width: 150px;
   height: 50px;
   border-radius: 30px;
@@ -41,11 +45,26 @@ const Btn_Write = styled.div`
 const InputForm = styled.div`
   width: 100%;
   height: 80%;
-  background-color: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin-bottom: 4px;
+`;
+const InputDes = styled.textarea`
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 100%;
+  height: 80%;
+  font-size: 1.5rem;
+`;
+const Input_title = styled.input`
+  font-size: 3.5rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  height: 15%;
 `;
 export default function InputModal(props) {
-  const [title, setTitle] = useState("");
-  const [des, setDes] = useState("");
+  const [title, setTitle] = useState("제목을 입력해주세요!");
+  const [des, setDes] = useState("내용을 입력해주세요!");
   const { id } = useParams();
   return (
     <Background>
@@ -60,7 +79,20 @@ export default function InputModal(props) {
             X
           </div>
         </Header>
-        <InputForm></InputForm>
+        <InputForm>
+          <Input_title
+            value={title}
+            onChange={(e) => {
+              setTitle(e.target.value);
+            }}
+          />
+          <InputDes
+            value={des}
+            onChange={(e) => {
+              setDes(e.target.value);
+            }}
+          />
+        </InputForm>
         <Btn_Write>
           {() => {
             axios
