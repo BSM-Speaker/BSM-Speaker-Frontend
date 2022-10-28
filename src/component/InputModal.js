@@ -33,6 +33,7 @@ const Header = styled.div`
   font-size: 40px;
 `;
 const Btn_Write = styled.div`
+  cursor: pointer;
   width: 150px;
   height: 50px;
   border-radius: 30px;
@@ -93,8 +94,8 @@ export default function InputModal(props) {
             }}
           />
         </InputForm>
-        <Btn_Write>
-          {() => {
+        <Btn_Write
+          onClick={() => {
             axios
               .post("/api/post", {
                 title: title,
@@ -107,7 +108,10 @@ export default function InputModal(props) {
               .catch((err) => {
                 console.log(err);
               });
+            props.setRe(!props.re);
+            props.setInputModal(false);
           }}
+        >
           글쓰기
         </Btn_Write>
       </Contain>
