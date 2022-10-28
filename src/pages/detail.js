@@ -6,7 +6,7 @@ import InputModal from "../component/InputModal";
 import PostListItem from "../component/PostListItem";
 const Btn_write = styled.button`
   border: 0px;
-  background-color: grey;
+  background-color: #bccef8;
   font-size: 20px;
   width: 150px;
   height: 50px;
@@ -37,7 +37,7 @@ const Post = styled.div`
 `;
 const Empty = styled.div`
   text-align: center;
-  font-size: 100px;
+  font-size: 80px;
 `;
 export function Detail() {
   const [post, setPost] = useState([]);
@@ -72,7 +72,7 @@ export function Detail() {
       )}
       <Post>
         {!post.length ? (
-          <Empty>글을 써주세요~!</Empty>
+          <Empty>첫 알림을 보내세요!</Empty>
         ) : (
           post.map((data) => {
             return <PostListItem data={data} />;

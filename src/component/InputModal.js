@@ -59,7 +59,7 @@ const InputDes = styled.textarea`
   font-size: 1.5rem;
 `;
 const Input_title = styled.input`
-  font-size: 3.5rem;
+  font-size: 3rem;
   background-color: rgba(255, 255, 255, 0.3);
   height: 15%;
 `;

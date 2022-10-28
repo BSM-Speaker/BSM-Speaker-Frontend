@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
-
-html, body, #root {
+html,
+body,
+#root {
   width: 100%;
   height: 100%;
-  font-family: 'Do Hyeon', sans-serif;
 }
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }

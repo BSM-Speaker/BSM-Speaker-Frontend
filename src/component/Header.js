@@ -10,7 +10,6 @@ const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 3px solid black;
   height: 80.66px;
   background: #baffe0;
 `;
@@ -41,6 +40,7 @@ const User = styled.div`
   width: 40px;
   height: 40px;
   margin-right: 20px;
+  cursor: pointer;
   background: url(/image/loginicon.png);
   background-size: contain;
   background-repeat: no-repeat;

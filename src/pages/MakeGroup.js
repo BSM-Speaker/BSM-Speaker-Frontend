@@ -13,18 +13,24 @@ const Contain = styled.div`
   height: 100%;
   font-size: 2rem;
 `;
-const InputBox = styled.textarea`
+const DesInputBox = styled.textarea`
   width: 80%;
-  height: 30%;
+  height: 350px;
   font-size: 23px;
   border-radius: 20px;
   padding: 5px;
   resize: none;
 `;
+const NameInputBox = styled.input`
+  width: 80%;
+  height: 60px;
+  font-size: 23px;
+  border-radius: 20px;
+  padding: 5px;
+`;
 const Submit = styled.div`
   margin-top: 20px;
   width: 50%;
-  height: 50px;
   border-radius: 100px;
   text-align: center;
   line-height: 50px;
@@ -32,29 +38,27 @@ const Submit = styled.div`
   cursor: pointer;
 `;
 function MakeGroup() {
-  const [name, setName] = useState("");
-  const [des, setDes] = useState("");
+  const [name, setName] = useState("그룹이름을 입력해주세요");
+  const [des, setDes] = useState(
+    "그룹설명을 입력해주세요 \n ex)목적, 규칙 등등"
+  );
   const [mg, setmg] = useRecoilState(mgState);
   return (
     <Contain>
       <div style={{ "font-size": "60px" }}>그룹생성</div>
-      <InputBox
-        type="text"
+      <NameInputBox
         onChange={(e) => {
           setName(e.target.value);
         }}
-        placeholder="그룹 이름을 입력해주세요"
-        style={{ height: "10%" }}
-      ></InputBox>
+        value={name}
+      ></NameInputBox>
       <br />
-      <InputBox
-        type="text"
+      <DesInputBox
         onChange={(e) => {
           setDes(e.target.value);
         }}
-        placeholder="그룹 설명을 입력해주세요"
-        style={{ fontSize: "15px", height: "60%" }}
-      ></InputBox>
+        value={des}
+      ></DesInputBox>
       <Submit
         onClick={() => {
           axios
@@ -70,7 +74,7 @@ function MakeGroup() {
             });
         }}
       >
-        생성!
+        생성
       </Submit>
     </Contain>
   );

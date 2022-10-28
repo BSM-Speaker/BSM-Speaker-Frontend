@@ -6,7 +6,6 @@ const StyledNav = styled.nav`
   width: 100%;
   height: 45px;
   background-color: #bbdeeb;
-  border-bottom: 3px solid black;
 `;
 const StyledLi = styled.li`
   list-style-type: none;

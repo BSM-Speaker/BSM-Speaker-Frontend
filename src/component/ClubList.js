@@ -11,7 +11,6 @@ import ClubListItem from "./ClubListItem";
 const StyledClubList = styled.div`
   width: 100px;
   background: #baffe0;
-  border-right: 3px solid black;
   overflow: auto;
   &::-webkit-scrollbar {
     display: none;
