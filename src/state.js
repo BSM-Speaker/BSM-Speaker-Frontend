@@ -1,20 +1,15 @@
 import {
-    RecoilRoot,
-    atom,
-    selector,
-    userRecoilState,
-    useRecoilValue,
-
-} from "recoil"
+  RecoilRoot,
+  atom,
+  selector,
+  userRecoilState,
+  useRecoilValue,
+} from "recoil";
 export const loginState = atom({
-    key: 'login',
-    default: JSON.parse(localStorage.getItem('user'))
-})
+  key: "login",
+  default: JSON.parse(localStorage.getItem("user")),
+});
 export const mgState = atom({
-    key: 'mg',
-    default: true
-})
-export const postModal = atom({
-    key: 'postModal',
-    default: false
-})
+  key: "mg",
+  default: true,
+});

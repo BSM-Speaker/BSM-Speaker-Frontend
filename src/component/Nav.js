@@ -46,10 +46,10 @@ function Nav() {
           <StyledLink to="/InviteCode">그룹가입</StyledLink>
         </StyledLi>
         <StyledLi>
-          <StyledSpan onClick={subscribe}>알림 등록</StyledSpan>
+          <StyledLink to="/MakeGroup">그룹생성</StyledLink>
         </StyledLi>
         <StyledLi>
-          <StyledLink to="/MakeGroup">그룹생성</StyledLink>
+          <StyledSpan onClick={subscribe}>알림 등록</StyledSpan>
         </StyledLi>
       </StyledUl>
     </StyledNav>
