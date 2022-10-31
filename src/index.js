@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import InviteCode from "./pages/InviteCode";
 import MakeGroup from "./pages/MakeGroup";
 import Oauth from "./pages/ouath";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 import {
   RecoilRoot,
   atom,
@@ -20,14 +21,22 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <RecoilRoot>
     <BrowserRouter>
-      <Routes>
-        <Route path="/oauth" element={<Oauth />}></Route>
-        <Route path="/" element={<App />}>
-          <Route path="/InviteCode" element={<InviteCode />} />
-          <Route path="/MakeGroup" element={<MakeGroup />} />
-          <Route path="/detail/:id" element={<Detail />} />
-        </Route>
-      </Routes>
+      <TransitionGroup className="transition-group">
+        <CSSTransition
+          key={window.location.pathname}
+          classNames="pageSlider"
+          timeout={500}
+        >
+          <Routes>
+            <Route path="/oauth" element={<Oauth />}></Route>
+            <Route path="/" element={<App />}>
+              <Route path="/InviteCode" element={<InviteCode />} />
+              <Route path="/MakeGroup" element={<MakeGroup />} />
+              <Route path="/detail/:id" element={<Detail />} />
+            </Route>
+          </Routes>
+        </CSSTransition>
+      </TransitionGroup>
     </BrowserRouter>
   </RecoilRoot>
 );

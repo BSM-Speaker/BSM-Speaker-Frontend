@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled, { StyledComponent } from "styled-components";
 import axios from "axios";
 import { useRecoilState } from "recoil";
+import { motion } from "framer-motion";
 const Contain = styled.div`
   display: flex;
   flex-direction: column;
