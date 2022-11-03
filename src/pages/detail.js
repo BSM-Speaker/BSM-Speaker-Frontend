@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import styled from "styled-components";
 import InputModal from "../component/InputModal";
 import PostListItem from "../component/PostListItem";
@@ -22,7 +22,13 @@ const Contain = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
+const Btn_setting = styled.div`
+  cursor: pointer;
+  color: black;
+  a {
+    text-decoration-line: none;
+  }
+`;
 const Post = styled.div`
   overflow: auto;
   flex-direction: column;
@@ -38,6 +44,9 @@ const Post = styled.div`
 const Empty = styled.div`
   text-align: center;
   font-size: 80px;
+`;
+const Header = styled.div`
+  display: flex;
 `;
 export function Detail() {
   const [post, setPost] = useState([]);
@@ -60,13 +69,18 @@ export function Detail() {
   }, [re, id]);
   return (
     <Contain>
-      <Btn_write
-        onClick={() => {
-          setInputModal(true);
-        }}
-      >
-        글쓰기
-      </Btn_write>
+      <Header>
+        <Btn_setting>
+          <Link to={`/GroupSetting/${id}`}>그룹관리</Link>
+        </Btn_setting>
+        <Btn_write
+          onClick={() => {
+            setInputModal(true);
+          }}
+        >
+          글쓰기
+        </Btn_write>
+      </Header>
       {Input_Modal && (
         <InputModal setInputModal={setInputModal} re={re} setRe={setRe} />
       )}

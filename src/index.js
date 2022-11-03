@@ -17,6 +17,7 @@ import {
 } from "recoil";
 import { Detail } from "./pages/detail";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+import GroupSetting from "./component/GroupSetting";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <RecoilRoot>
@@ -33,6 +34,7 @@ root.render(
               <Route path="/InviteCode" element={<InviteCode />} />
               <Route path="/MakeGroup" element={<MakeGroup />} />
               <Route path="/detail/:id" element={<Detail />} />
+              <Route path="/GroupSetting/:id" element={<GroupSetting />} />
             </Route>
           </Routes>
         </CSSTransition>
