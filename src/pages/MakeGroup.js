@@ -21,12 +21,13 @@ const DesInputBox = styled.textarea`
   padding: 5px;
   resize: none;
 `;
-const NameInputBox = styled.input`
+const NameInputBox = styled.textarea`
   width: 80%;
   height: 60px;
   font-size: 23px;
   border-radius: 20px;
   padding: 5px;
+  resize: none;
 `;
 const Submit = styled.div`
   margin-top: 20px;
@@ -38,10 +39,8 @@ const Submit = styled.div`
   cursor: pointer;
 `;
 function MakeGroup() {
-  const [name, setName] = useState("그룹이름을 입력해주세요");
-  const [des, setDes] = useState(
-    "그룹설명을 입력해주세요 \n ex)목적, 규칙 등등"
-  );
+  const [name, setName] = useState("");
+  const [des, setDes] = useState("");
   const [mg, setmg] = useRecoilState(mgState);
   return (
     <Contain>
@@ -51,6 +50,7 @@ function MakeGroup() {
           setName(e.target.value);
         }}
         value={name}
+        placeholder="그룹이름을 입력해주세요"
       ></NameInputBox>
       <br />
       <DesInputBox
@@ -58,6 +58,7 @@ function MakeGroup() {
           setDes(e.target.value);
         }}
         value={des}
+        placeholder="그룹설명을 입력해주세요 ex)목적, 규칙 등등"
       ></DesInputBox>
       <Submit
         onClick={() => {

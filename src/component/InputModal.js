@@ -57,15 +57,17 @@ const InputDes = styled.textarea`
   width: 100%;
   height: 80%;
   font-size: 1.5rem;
+  resize: none;
 `;
-const Input_title = styled.input`
+const Input_title = styled.textarea`
+  resize: none;
   font-size: 3rem;
   background-color: rgba(255, 255, 255, 0.3);
   height: 15%;
 `;
 export default function InputModal(props) {
-  const [title, setTitle] = useState("제목을 입력해주세요!");
-  const [des, setDes] = useState("내용을 입력해주세요!");
+  const [title, setTitle] = useState("");
+  const [des, setDes] = useState("");
   const { id } = useParams();
   return (
     <Background>
@@ -86,12 +88,14 @@ export default function InputModal(props) {
             onChange={(e) => {
               setTitle(e.target.value);
             }}
+            placeholder="제목을 입력해주세요!"
           />
           <InputDes
             value={des}
             onChange={(e) => {
               setDes(e.target.value);
             }}
+            placeholder="내용을 입력해주세요!"
           />
         </InputForm>
         <Btn_Write

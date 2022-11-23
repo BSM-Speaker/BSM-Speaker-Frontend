@@ -18,6 +18,7 @@ import {
 import { Detail } from "./pages/detail";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import GroupSetting from "./component/GroupSetting";
+import Main from "./pages/main";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <RecoilRoot>
@@ -31,6 +32,7 @@ root.render(
           <Routes>
             <Route path="/oauth" element={<Oauth />}></Route>
             <Route path="/" element={<App />}>
+              <Route path="/" element={<Main />} />
               <Route path="/invite" element={<InviteCode />} />
               <Route path="/makegroup" element={<MakeGroup />} />
               <Route path="/detail/:id" element={<Detail />} />
