@@ -25,6 +25,8 @@ const StyledLi = styled.li`
 `;
 function ClubListItem(props) {
   const navigate = useNavigate();
+  let clubname = props.name;
+  clubname = clubname.length > 4 ? clubname.substring(0, 5) + "..." : clubname;
   return (
     <StyledLi
       onClick={() => {
@@ -33,7 +35,7 @@ function ClubListItem(props) {
       }}
       isSelected={props.isSelected}
     >
-      <StyledClubListItem>{props.name}</StyledClubListItem>
+      <StyledClubListItem>{clubname}</StyledClubListItem>
     </StyledLi>
   );
 }

@@ -31,10 +31,10 @@ root.render(
           <Routes>
             <Route path="/oauth" element={<Oauth />}></Route>
             <Route path="/" element={<App />}>
-              <Route path="/InviteCode" element={<InviteCode />} />
-              <Route path="/MakeGroup" element={<MakeGroup />} />
+              <Route path="/invite" element={<InviteCode />} />
+              <Route path="/makegroup" element={<MakeGroup />} />
               <Route path="/detail/:id" element={<Detail />} />
-              <Route path="/GroupSetting/:id" element={<GroupSetting />} />
+              <Route path="/groupsetting/:id" element={<GroupSetting />} />
             </Route>
           </Routes>
         </CSSTransition>
