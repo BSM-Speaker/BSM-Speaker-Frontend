@@ -6,12 +6,13 @@ import InputModal from "../component/InputModal";
 import PostListItem from "../component/PostListItem";
 const Btn_write = styled.button`
   border: 0px;
-  background-color: #bccef8;
+  border: solid black 2px;
   font-size: 20px;
   width: 150px;
   height: 50px;
-  border-radius: 10px;
+  border-radius: 5px;
   color: black;
+  background-color: white;
   cursor: pointer;
 `;
 const Contain = styled.div`
@@ -23,9 +24,17 @@ const Contain = styled.div`
   flex-direction: column;
 `;
 const Btn_setting = styled.div`
+  line-height: 50px;
+  text-align: center;
+  border: 0px;
+  border: solid black 2px;
+  font-size: 20px;
+  width: 150px;
+  height: 50px;
+  border-radius: 5px;
   cursor: pointer;
-  color: black;
   a {
+    color: black;
     text-decoration-line: none;
   }
 `;
@@ -34,12 +43,13 @@ const Post = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100%;
+  background-color: #fcf9f8;
   &::-webkit-scrollbar {
     display: none;
   }
   margin-top: 20px;
-  border: solid grey 3px;
-  border-radius: 20px;
+  border: solid grey 1px;
+  border-radius: 10px;
 `;
 const Empty = styled.div`
   text-align: center;
@@ -47,6 +57,7 @@ const Empty = styled.div`
 `;
 const Header = styled.div`
   display: flex;
+  gap: 20px;
 `;
 export function Detail() {
   const [post, setPost] = useState([]);

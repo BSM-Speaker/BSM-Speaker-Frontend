@@ -11,16 +11,18 @@ const StyledClubListItem = styled.div`
   cursor: pointer;
 `;
 const StyledLi = styled.li`
+  background-color: white;
   width: 60px;
   height: 60px;
   margin-top: 30px;
   display: flex;
+  border: 1px solid gray;
   align-items: center;
-  background-color: beige;
   border-radius: 50%;
   &:hover {
     box-shadow: 0px 0px 0px 5px white;
   }
+  background-color: ${(props) => props.isSelected && "lightgray"};
   border: ${(props) => props.isSelected && "solid 2px black"};
 `;
 function ClubListItem(props) {

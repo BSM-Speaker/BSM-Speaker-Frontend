@@ -4,13 +4,11 @@ import styled from "styled-components";
 
 const Contain = styled.div`
   cursor: pointer;
-  height: 50px;
   margin: 20px;
-  font-size: 40px;
+  font-size: 2rem;
   text-align: center;
-  border-radius: 20px;
-  background-color: beige;
-  border: 2px solid grey;
+  border-radius: 5px;
+  border: solid 1px black;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -10,7 +10,8 @@ import { loginState, mgState } from "../state";
 import ClubListItem from "./ClubListItem";
 const StyledClubList = styled.div`
   width: 100px;
-  background: #baffe0;
+  border-right: solid 1px black;
+  background-color: #fcf9f8;
   overflow: auto;
   &::-webkit-scrollbar {
     display: none;

@@ -11,7 +11,8 @@ const StyledHeader = styled.header`
   align-items: center;
   justify-content: space-between;
   height: 80.66px;
-  background: #baffe0;
+  background-color: #fcf9f8;
+  border-bottom: 1px solid black;
 `;
 const Logo = styled.div`
   margin-left: 20px;
